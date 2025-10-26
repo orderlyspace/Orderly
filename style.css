@@ -1,68 +1,76 @@
-/* ======= Orderly - Clean UI ======= */
-body {
-  font-family: "Poppins", sans-serif;
-  background: #fffaf6;
-  margin: 0;
-  padding: 0;
-  color: #333;
+/* Orderly — Light professional theme */
+:root{
+  --bg:#ffffff;
+  --text:#0b0b0b;
+  --muted:#6b6b6b;
+  --card:#f7f7f8;
+  --accent:#333;
+  --primary:#111;
+  --btn:#111;
+  --radius:12px;
+  --shadow: 0 6px 20px rgba(15,15,15,0.06);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-header {
-  text-align: center;
-  background: #ff7043;
-  color: white;
-  padding: 20px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 24px;
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; border-bottom:1px solid #eee; background:transparent;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-mark{flex:0 0 34px;border-radius:8px}
+.brand-title{font-weight:700;font-size:18px}
+.brand-sub{font-size:12px;color:var(--muted)}
+
+.header-right{font-size:13px;color:var(--muted)}
+.rest-small{font-weight:600}
+
+main#app{padding:16px;padding-bottom:100px} /* space for footer */
+
+.intro-row{display:flex;flex-direction:column;gap:6px}
+.lead{color:var(--muted);margin-top:6px;margin-bottom:14px}
+
+.card{background:var(--card);padding:12px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px}
+.section-title{margin:0 0 8px 0;color:var(--primary);font-size:18px}
+
+.grid-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:640px){ .grid-cards{grid-template-columns:1fr} }
+
+.menu-card{background:#fff;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;border:1px solid #eee}
+.menu-row{display:flex;justify-content:space-between;align-items:center}
+.menu-name{font-weight:600}
+.menu-desc{font-size:13px;color:var(--muted)}
+.menu-price{font-weight:700;color:var(--primary)}
+
+.btn{border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+.btn.primary{background:var(--btn);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #ddd;color:var(--primary)}
+
+.order-list{min-height:64px}
+.order-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #eee}
+.order-item .remove{background:#fff;border:1px solid #e0e0e0;color:#c0392b;padding:6px;border-radius:8px;cursor:pointer}
+
+.form-row{margin-top:10px}
+.form-row label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type="text"], input, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px;background:#fff}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.actions-row{display:flex;gap:8px;margin-top:12px}
+.order-msg{margin-top:10px;color:var(--muted);font-size:14px}
+
+/* Footer */
+.site-footer{
+  position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #eee;padding:10px 14px;text-align:center;font-size:13px;color:var(--muted);
+  box-shadow: 0 -6px 20px rgba(15,15,15,0.02);
 }
 
-#menu, #order {
-  margin: 20px;
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-h2 {
-  color: #ff7043;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.menu-item button {
-  background: #ff7043;
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.menu-item button:hover {
-  background: #e95b2d;
-}
-
-#orderList {
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 15px;
-  background: #f5f5f5;
-  color: #777;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+/* small helpers */
+.small{font-size:13px;color:var(--muted)}
