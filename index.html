@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orderly - Smart QR Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Welcome to <span id="restaurantName">Orderly Restaurant</span></h1>
+    <p>Scan. Order. Enjoy.</p>
+  </header>
+
+  <section id="menu">
+    <h2>Menu</h2>
+    <div id="menuItems"></div>
+  </section>
+
+  <section id="order">
+    <h2>Your Order</h2>
+    <div id="orderList"></div>
+    <label>Table No:</label>
+    <input type="text" id="tableNo" placeholder="Enter table no">
+    <button onclick="placeOrder()">Place Order</button>
+  </section>
+
+  <footer>
+    <p>Powered by <strong>Orderly</strong></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
